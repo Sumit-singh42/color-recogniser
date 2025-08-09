@@ -1,4 +1,3 @@
-# pip install tensorflow numpy pandas pillow sklearn
 import numpy as np
 import pandas as pd
 from PIL import Image
@@ -6,7 +5,7 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-# some color names from github
+# some colour names from GitHub
 url = "https://raw.githubusercontent.com/codebrainz/color-names/master/output/colors.csv"
 df = pd.read_csv(url)
 
@@ -51,4 +50,5 @@ loss, acc = model.evaluate(X_test, y_test)
 print(f"Test_accuracy: {acc*100:.2f}%")
 
 model.save("color_cnn.h5")
+
 np.save("color_labels.npy", le.classes_)
